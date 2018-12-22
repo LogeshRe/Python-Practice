@@ -1,4 +1,4 @@
-
+#Questions for Problems at https://www.w3resource.com/python-exercises/python-basic-exercises.php
 
 class pythonpractice:
 	def __init__(self,input1,input2):
@@ -18,7 +18,7 @@ class pythonpractice:
 	def problem3():
 		import datetime
 		x = datetime.datetime.now()
-		print(x.strftime("%Y-%m-%d %H:%M:%S"))
+		print(x.strftime("%Y-%m-%d %H:%M:%S")) 
 
 	def problem4():
 		from math import pi
