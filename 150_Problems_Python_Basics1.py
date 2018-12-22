@@ -1,4 +1,5 @@
 #Questions for Problems at https://www.w3resource.com/python-exercises/python-basic-exercises.php
+#To check the solution please type pythonpractice.problem**YourProblemNumer**() in the Main() function and run the program
 
 class pythonpractice:
 	def __init__(self,input1,input2):
