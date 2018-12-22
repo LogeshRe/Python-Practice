@@ -85,9 +85,64 @@ class pythonpractice:
 		print('The volume of sphere of radius %d is : '%radius,(4/3)*pi*(radius**3))
 
 	def problem16():
+		num = int(input('Enter the Number : '))
+		if(num <= 17):
+			print('The difference is ',17 - num)
+		else:
+			print('The Output is ',(num - 17)*2)
+
+	def problem17():
+		num = int(input('Enter the Number: '))
+		if((abs(1000-num)<=100)or(abs(2000-num)<=100)):
+			print(True)
+		else:
+			print(False)
+
+	def problem18():
+		a = int(input('Enter the Number 1 : '))
+		b = int(input('Enter the Number 2 : '))
+		c = int(input('Enter the Number 3 : '))
+		if((a == b)and(b == c)):
+			print(3*(a+b+c))
+		else:
+			print(a+b+c)
+
+	def problem19():
+		string = input('Enter the string : ')
+		if(string[:2] == 'Is'):
+			print(string)
+		else:
+			print('Is'+string)
+
+	def problem20():
+		string = input('Enter the String : ')
+		num = int(input('Enter number of copies : '))
+		print(string*num)
+
+	def problem21():
+		num = int(input('Enter the Number : '))
+		if((num == 0) or (num % 2 == 0)):
+			print('Even')
+		else:
+			print('Odd')
+
+	def problem22():
+		#Give Comma separated values
+		num = input('Enter the values in list Comma Separated : ').split(',')
+		print(num.count('4'))
+
+	def problem23():
+		string = input('Enter the string : ')
+		n = int(input('Enter the Number of reputations : '))
+		if(len(string)<2):
+			print(string*n)
+		else:
+			print(string[:2]*n)
+
+
 
 def main():
-	pythonpractice.problem15()
+	pythonpractice.problem23()
 
 
 
