@@ -138,11 +138,58 @@ class pythonpractice:
 			print(string*n)
 		else:
 			print(string[:2]*n)
+	
+	def problem24():
+		letter = input('Enter the Alphabet : ')
+		vowels = ['a','e','i','o','u','A','E','I','O','U']
+		if letter in vowels:
+			print('It\'s a vowel')
+		else:
+			print('It\'s not a vowel')
 
+	def problem25():
+		list1 = [1,2,3,4]
+		num = int(input('Enter the number: '))
+		if num in list1:
+			print(True)
+		else:
+			print(False)
 
+	def problem26():
+		list1 = [7,5,4,2,4]
+		for num in list1:
+			print('*'*num)
+
+	def problem27():
+		list1 = ["I","Love","being","fit"]
+		string = " ".join(list1)
+		print(string)
+
+	def problem28():
+		numbers = [386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 
+				    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 
+				    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 
+				    958,743, 527]
+		for num in numbers:
+			if(num%2 == 0):
+				print(num)
+			if(num == 237):
+				break
+
+	def problem29():
+		color_list_1 = set(["White", "Black", "Red"]) 
+		color_list_2 = set(["Red", "Green"])
+		color_set = color_list_1 - color_list_2
+		print(color_set)
+
+	def problem30():
+		base = int(input('Enter the Base : '))
+		height = int(input('Enter the Height: '))
+		Area = (base * height)/2
+		print(Area) 
 
 def main():
-	pythonpractice.problem23()
+	pythonpractice.problem30()
 
 
 
