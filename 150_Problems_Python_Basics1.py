@@ -186,7 +186,16 @@ class pythonpractice:
 		base = int(input('Enter the Base : '))
 		height = int(input('Enter the Height: '))
 		Area = (base * height)/2
-		print(Area) 
+		print(Area)
+
+	def problem31():
+		num1 = int(input('Enter the Number 1 : '))
+		num2 = int(input('Enter the Number 2 : '))
+		if(num1 == num2):
+			
+
+
+
 
 def main():
 	pythonpractice.problem30()
