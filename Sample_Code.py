@@ -1,3 +1,5 @@
+import tkinter as tk
+from tkinter.filedialog import askdirectory
 from os import listdir
 import os, xlrd, xlwt, win32api
 from xlutils.copy import copy
@@ -5,7 +7,6 @@ List_BoBc = []
 Dict_BoBc = {}
 
 def Readpath():
-    from tkinter.filedialog import askdirectory
     foldername = askdirectory()
     return foldername
 
@@ -73,14 +74,54 @@ def copywb(filename,sheet2):
         rb_sheet_rows += 1
     wb.save(filename[:filename.rfind('/')+1] + 'Out_' + filename[filename.rfind('/')+1:filename.rfind('.')] + '.xls')
 
-def newcheck(filename):
+'''def newcheck(filename):
     import openpyxl
     mywb = openpyxl.load_workbook(filename)
-    mywb.save(filename[:filename.rfind('/')+1] + 'Out_' + filename[filename.rfind('/')+1:filename.rfind('.')] + '.xls')
+    mywb.save(filename[:filename.rfind('/')+1] + 'Out_' + filename[filename.rfind('/')+1:filename.rfind('.')] + '.xls')'''
+class sampleapp(tk.Tk):
+	def __init__(self,*args,**kwargs):
+		tk.Tk.__init__(self,*args,**kwargs)
+		lb = tk.Listbox(self)
+		self.lists = []
+		for values in listdir(openfile()):
+			lb.insert("end",values)
+		#lb.insert("end","one")
+		#lb.insert("end","two")
+		#lb.insert("end","three")
+		lb.bind("<Double-Button-1>", self.OnDouble)
+		#lb.bind("<Button-1>", self.OnDouble)
+		lb.pack(side="top", fill="both", expand=True)
+		button = tk.Button(lb, 
+                   text="Process", 
+                   fg="red",
+                   command=self.testu(self))
+		button.pack(side=tk.BOTTOM)
+		button = tk.Button(lb, 
+                   text="QUIT", 
+                   fg="red",
+                   command=quit)
+		button.pack(side=tk.BOTTOM)
+
+
+	def OnDouble(self, event):
+	    widget = event.widget
+	    selection=widget.curselection()
+	    value = widget.get(selection[0])
+	    #print("selection:", selection, ": '%s'" % value)
+	    testu(value)
+	    print(self.lists)
+
+	def testu(self, lists):
+		print(self.lists)
 
 
 
-#original_folder = Readpath()
-#Files = xlfinder(original_folder)
-copywb('C:/Users/Logesh/Desktop/Retrofit Automation/New folder/1_C3D List of Values Loader.xls','C:/Users/Logesh/Desktop/Retrofit Automation/New folder/2_C3D List of Values Loader.xls')
-#newcheck('C:/Users/Logesh/Desktop/Retrofit Automation/New folder/1_C3D List of Values Loader.xls')
+def main():
+	#original_folder = Readpath()
+	#Files = xlfinder(original_folder)
+	copywb('C:/Users/Logesh/Desktop/Retrofit Automation/New folder/1_C3D List of Values Loader.xls','C:/Users/Logesh/Desktop/Retrofit Automation/New folder/2_C3D List of Values Loader.xls')
+	#newcheck('C:/Users/Logesh/Desktop/Retrofit Automation/New folder/1_C3D List of Values Loader.xls')
+
+
+if __name__ == '__main__':
+	main()
