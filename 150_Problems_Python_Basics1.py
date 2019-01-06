@@ -190,17 +190,28 @@ class pythonpractice:
 
 	def problem31():
 		num1 = int(input('Enter the Number 1 : '))
-		num2 = int(input('Enter the Number 2 : '))
+		num2 = int(input('Enter the Number 2 : '))		
+		def gcds(num1,num2):
+			num = num2
+			while True:
+				if(num1 % num == 0 and num2 % num == 0):
+					print(num," is the GCD")
+					break
+				while True:
+					num = num-1
+					if(num2 % num == 0):
+						break
 		if(num1 == num2):
-			
-
-
-
+			print(num1, " is the GCD")
+			return
+		else:
+			if(num1 > num2):
+				gcds(num1,num2)
+			else:
+				gcds(num2,num1)
 
 def main():
-	pythonpractice.problem30()
-
-
+	pythonpractice.problem31()
 
 if __name__ == "__main__":
 	main()
