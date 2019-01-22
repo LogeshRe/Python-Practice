@@ -210,8 +210,70 @@ class pythonpractice:
 			else:
 				gcds(num2,num1)
 
+	def problem32():
+		def LCM(num1,num2):
+			pass
+			
+	def problem33():
+		num = (input('Enter the Number')).split(',')
+		if((int(num[0]) == int(num[1])) or (int(num[1]) == int(num[2])) or (int(num[0]) == int(num[2]))):
+			print(0)
+		else:
+			print(int(num[0])+int(num[1])+int(num[2]))
+
+	def problem34():
+		num1 = int(input('Enter the Number 1 : '))
+		num2 = int(input('Enter the Number 2 : '))
+		sum = num1 + num2
+		if(sum > 15 and sum < 20):
+			print(20)
+		else:
+			print(sum)
+
+	def problem35():
+		num1 = int(input('Enter the Number 1 : '))
+		num2 = int(input('Enter the Number 2 : '))
+		if(num1 == num2 or (abs(num1 - num2) == 5) or (num1 + num2) == 5):
+			print(True)
+		else:
+			print(False)
+
+	def problem36():
+		def ifint(num,num1):
+			if(isinstance(num,int) and isinstance(num1,int)):
+				print(num+num1)
+			else:
+				print("Enter Integers")
+
+		ifint(2,0)
+
+	def problem37():
+		name , age , address = 'Logesh', 24, 'Accenture, Pune, India'
+		print('Name: {}\nAge: {}\nAddress: {}'.format(name,age,address))
+
+	def problem38():
+		num1 = 3
+		num2 = 4
+		result = (num1+num2)**2
+		print("({} + {})^2)={}".format(num1,num2,result))
+
+	def problem39():
+		amt = 10000
+		inst = 3.5
+		years = 7
+		fv = amt *((1 + (0.01*inst))**years)
+		print(round(fv,2))
+
+	def problem40():
+		import math
+		x1, y1 = 4,0
+		x2, y2 = 6,6
+		distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
+		print(distance)
+
+
 def main():
-	pythonpractice.problem31()
+	pythonpractice.problem40()
 
 if __name__ == "__main__":
 	main()
