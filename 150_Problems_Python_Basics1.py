@@ -271,9 +271,129 @@ class pythonpractice:
 		distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
 		print(distance)
 
+	def problem41():
+		from os import path
+		if(path.exists('C:\Logesh.mp3')):
+			print('Present')
+		else:
+			print('Not Present')
+
+	def problem42():
+		import platform
+		val = platform.architecture()
+		print(val[0])
+
+	def problem43():
+		import os, platform
+		print(os.name)
+		print(platform.system())
+		print(platform.release())
+
+	def problem44():
+		pass
+
+	def problem45():
+		import os
+		print(os.system('echo Logesh'))
+
+	def problem46():
+		import os
+		print(os.path.realpath(__file__))
+
+	def problem47():
+		pass
+
+	def problem48():
+		val = ('12','1.3','24.0','qb')
+		try:
+			for a in val:
+				if '.' in a:
+					print(float(a))
+				else:
+					print(int(a))
+
+		except ValueError:
+			print('The value {} is not a numnber'.format(a))
+
+
+	def problem49():
+		from os import listdir
+		from os.path import isfile, join
+		mypath = r'C:\Users\Logesh\Desktop'
+		file = [f for f in listdir(mypath) if isfile(join(mypath,f))]
+		for filename in file:
+			print(filename)
+
+	def problem50():
+		for i in range(0,11):
+			print(i, end='')
+
+	def problem51():
+		import cProfile
+		print(cProfile.run('pythonpractice.problem48()'))
+
+	def problem52():
+		def eprint(*args,**kwargs):
+			print(*args,**kwargs)
+
+		eprint('a','b','c','d', sep ='--')
+
+	def problem53():
+		from os import environ
+		print(environ)
+		print(environ['PATH'])
+
+	def problem54():
+		import getpass
+		print(getpass.getuser())
+
+	def problem55():
+		pass
+		
+	def problem56():
+		pass
+		
+	def problem57():
+		import time
+		start_time = time.time()
+		pythonpractice.problem49()
+		end_time = time.time()
+		total_time = end_time - start_time
+		print(total_time)
+
+	def problem58():
+		try:
+			num = int(input('Enter the Number: '))
+			print(num*(num+1)/2)
+		except ValueError:
+			print('Please Enter Number Only')
+
+	def problem59():
+		Ht_Ft = int(input('Enter your Height in Feet: '))
+		Ht_In = int(input('Enter your Height in Inches: '))
+		Ht_In = (Ht_Ft*12)+Ht_In
+		Ht_cm = round(Ht_In*2.54,1)
+		print('The height is %d cm'%Ht_cm)
+
+	def problem60():
+		from math import sqrt
+		print('Enter the sides of the triangle')
+		a = float(input('a : '))
+		b = float(input('b : '))
+		c = sqrt(a**2 + b**2)
+		print('Hypotenuse is %f'%c)
+
+	def problem61():
+		ft = int(input('Enter the number of fts'))
+		yd = ft/3
+		ml = ft/5280
+		In = ft*12
+		print('%d ft in Inches is %f Inches'%(ft,In))
+		print('%d ft in Yards is %.2f Yards'%(ft,yd))
+		print('%d ft in Miles is %.2f miles'%(ft,ml))
 
 def main():
-	pythonpractice.problem40()
+	pythonpractice.problem61()
 
 if __name__ == "__main__":
 	main()
